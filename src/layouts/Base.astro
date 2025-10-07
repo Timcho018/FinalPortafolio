@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const { title } = Astro.props;
 ---
 
@@ -9,7 +11,6 @@ const { title } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title ? `${title} — Jimmy` : 'Portafolio Jimmy'}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="/src/styles/global.css" />
   <slot name="styles" />
 </head>
 <body>
@@ -34,7 +35,9 @@ const { title } = Astro.props;
 
   <slot name="cursors" />
   
-  <script type="module" src="/src/scripts/menu.js"></script>
+  <script>
+    import '../scripts/menu.js';
+  </script>
   <slot name="scripts" />
 </body>
 </html>
